@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Load secrets
+    ansible.builtin.include_vars:
+      file: secrets.yml
+      name: secrets
+
+  - name: Print AWS Access Key ID
+    ansible.builtin.debug:
+      msg: "AWS Access Key ID is {{ secrets.aws_access_key_id }}"

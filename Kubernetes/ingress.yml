@@ -1,0 +1,61 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sock-ingress
+  namespace: sock-shop
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod 
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: egbedo.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: front-end
+                port:
+                  number: 80
+
+    - host: prometheus.egbedo.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: prometheus-operated
+                port:
+                  number: 9090  
+
+    - host: grafana.egbedo.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: prometheus-grafana
+                port:
+                  number: 80
+
+    - host: alertmanager.egbedo.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: alertmanager-operated
+                port:
+                  number: 9093                                        
+  tls:
+    - hosts:
+        - egbedo.me
+        - grafana.egbedo.me
+        - prometheus.egbedo.me
+        - alertmanager.egbedo.me
+
+      secretName: sockshop-ingress-cert 

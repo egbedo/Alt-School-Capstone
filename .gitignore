@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!README.md
+!Images/
+!cert.yml
+!deploy.yml
+!ingress.yml 
+!Kubernetes/
+!Terraform/Sockshop-main.tf
+!playbook.yml
+!secrets.yml
+!.github/
