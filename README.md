@@ -91,6 +91,22 @@ To ensure the application's health and track its operations, we'll set up Promet
 
 21. We then run `kubectl apply -f ingress.yml` to apply the new configurations that we made for the grafana, prometheus and alertmanager such that when we visit `prometheus.egbedo.me`, we get ![pro](./Images/prometheus.PNG)
 
+## Running the CI/CD pipeline
+
+### 1. Configure GitHub Secrets
+
+1. Navigated to my GitHub repository on GitHub.
+2. went to **Settings** > **Secrets and variables** > **Actions**.
+3. Added the following secrets:
+   - `AWS_ACCESS_KEY_ID`:  AWS Access Key ID.
+   - `AWS_SECRET_ACCESS_KEY`:  AWS Secret Access Key.
+   - `AWS_REGION`:  AWS region (e.g., `us-east-1`).
+   - `ANSIBLE_VAULT_PASSWORD`: The password for my Ansible Vault.
+   
+
+### 2. Set Up GitHub Actions
+
+Created the `.github/workflows/ci-cd.yml` file in my repository and then put in set up. Uploaded the files to my repository and that concludes the whole set up
 
 
 
