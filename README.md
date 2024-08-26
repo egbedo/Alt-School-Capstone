@@ -43,7 +43,7 @@ To ensure the application's health and track its operations, we'll set up Promet
  2. did `mkdir Sock-shop` to set up my sock-shop folder
  3. `cd Sock-shop` and then `terraform init` to initialize terraform then `terraform apply` to apply the configuration to set up my EKS cluster on AWS, the configuration can be found in my `Sockshop-main.tf` file. 
  4. After running the terraform file, my EKS is created as shown below 
- ![eks](./Images/eks.PNG) my EKS already created on AWS
+ !![eks](./Images/eks.PNG) my EKS already created on AWS
 
  5. After setting up the Kubernetes Cluster on AWS, I went ahead and created a folder in my Sock-shop app. `mkdir Kubernetes` then `cd Kubernetes` and inside the kubernes folder, clone the `deploy.yml` file from the github repo and also create an ingress file with `touch ingress.yml`. the contents of the `ingress.yml` file is added to this repository  
 
@@ -87,8 +87,7 @@ To ensure the application's health and track its operations, we'll set up Promet
 19. Next step is to install the Kube-Prometheus-Stack Helm chart into a Kubernetes cluster using   `helm install prometheus prometheus/kube-prometheus-stack -n sock-shop`
 
 20. After doing this, we'll go back to our DNS management and configure or domain name to serve the several values of the grafana, prometheus and alertmanager as shown below.
-![cname](./Images/cname2.PNG)
-
+![cname](./Images/)
 21. We then run `kubectl apply -f ingress.yml` to apply the new configurations that we made for the grafana, prometheus and alertmanager such that when we visit `prometheus.egbedo.me`, we get ![pro](./Images/prometheus.PNG)
 
 ## Running the CI/CD pipeline
