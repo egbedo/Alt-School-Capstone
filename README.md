@@ -87,7 +87,7 @@ To ensure the application's health and track its operations, we'll set up Promet
 19. Next step is to install the Kube-Prometheus-Stack Helm chart into a Kubernetes cluster using   `helm install prometheus prometheus/kube-prometheus-stack -n sock-shop`
 
 20. After doing this, we'll go back to our DNS management and configure or domain name to serve the several values of the grafana, prometheus and alertmanager as shown below.
-![cname](./Images/)
+![cname](./Images/cname.PNG)
 21. We then run `kubectl apply -f ingress.yml` to apply the new configurations that we made for the grafana, prometheus and alertmanager such that when we visit `prometheus.egbedo.me`, we get ![pro](./Images/prometheus.PNG)
 
 ## Running the CI/CD pipeline
